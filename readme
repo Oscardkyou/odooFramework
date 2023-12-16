@@ -1,0 +1,176 @@
+
+https://odoo-documentation.oeerp.com/administration/install/install.html#setup-install-source
+//ОФИЦИАЛЬНЫЙ САЙТ odoo
+
+# ODOO INSTALL
+
+for linux 
+
+1. **Установка необходимых зависимостей для Python:**
+    
+    ```bash
+    bashCopy code
+    sudo apt-get install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev
+    
+    ```
+    
+    Эта команда устанавливает библиотеки и заголовочные файлы, необходимые для компиляции и работы программ, связанных с Python.
+    
+2. **Создание пользователя в PostgreSQL для Odoo:**
+    
+    ```bash
+    bashCopy code
+    sudo su - postgres -c "createuser -s odoo" 2> /dev/null || true
+    
+    ```
+    
+    Здесь мы создаем суперпользователя базы данных с именем **`odoo`**, игнорируя ошибку, если пользователь уже существует.
+    
+3. **Установка дополнительных зависимостей для разработки:**
+    
+    ```bash
+    bashCopy code
+    sudo apt-get install git python3 python3-pip build-essential wget python3-dev python3-venv python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less libjpeg-dev gdebi -y
+    
+    ```
+    
+    Эта команда устанавливает различные пакеты и инструменты, необходимые для разработки и выполнения приложений, таких как Odoo.
+    
+4. **Установка Node.js и npm:**
+    
+    ```bash
+    bashCopy code
+    sudo apt-get install nodejs npm -y
+    
+    ```
+    
+    Устанавливаем Node.js и npm для работы с JavaScript-зависимостями в проекте.
+    
+5. **Добавление репозитория Node.js и установка:**
+    
+    ```bash
+    bashCopy code
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt-get install -y nodejs
+    
+    ```
+    
+    Эти команды добавляют репозиторий Node.js и устанавливают его. Обновление репозитория необходимо для доступа к последней версии Node.js.
+    
+6. **Установка инструмента wkhtmltopdf:**
+    
+    ```bash
+    bashCopy code
+    sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
+    
+    ```
+    
+    Загрузка инструмента **`wkhtmltopdf`** — конвертера HTML в PDF, который может использоваться в различных проектах.
+    
+    **Установка Node.js и npm:**
+    
+    ```
+    sudo apt-get install nodejs npm -y
+    
+    ```
+    
+    - **Добавление репозитория Node.js:**
+        
+        ```
+        curl -sL http://deb.nodesource.com/setup_20.x | sudo -E bash -bash
+        
+        ```
+        
+    - **Установка Node.js (после добавления репозитория):**
+        
+        ```
+        sudo apt-get install -y nodejs
+        ```
+        
+    - **Установка rticss глобально через npm:**
+        
+        ```
+        sudo npm install -g rticss
+        
+        ```
+        
+    - **Установка дополнительных шрифтов:**
+        
+        ```
+        sudo apt-get install fonts-75dpi
+        ```
+        
+    - **Установка Wkhtmltopdf:**
+        
+        ```
+        sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
+        ```
+        
+    - **Установка зависимостей для Wkhtmltopdf:**
+        
+        ```
+        sudo apt install -f
+        ```
+        
+    - **Установка Wkhtmltopdf (после установки зависимостей):**
+        
+        ```
+        sudo dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb
+        ```
+        
+    - **Копирование исполняемых файлов Wkhtmltopdf:**
+        
+        ```
+        sudo cp /usr/local/bin/wkhtmltoimage /usr/bin/
+        sudo cp /usr/local/bin/wkhtmltopdf /usr/bin/
+        ```
+        
+    
+    **Создание директории "custom":**
+    
+    ```
+    mkdir custom
+    ```
+    
+    - **Изменение владельца директории "custom" на root:**
+        
+        ```
+        chown -R root:root custom
+        ```
+        
+    - **Открытие файла конфигурации Odoo для редактирования:**
+        
+        ```
+        nano /etc/odoo/odoo.conf
+        ```
+        
+    - **Указание пути к пользовательским модулям в файле конфигурации "odoo.conf":**
+    Добавьте следующую строку в файл конфигурации, указав правильный путь:
+        
+        ```
+        addons_path = /usr/lib/python3/dist-packages/odoo/custom,/usr/lib/python3/dist-packages/odoo/
+        ```
+        
+    - **Перезапуск сервиса Odoo:**
+        
+        ```
+        service odoo restart
+        ```
+        
+    - **Открытие Odoo в веб-браузере:**
+    Откройте веб-браузер и перейдите по адресу:
+        
+        ```
+        http://localhost:8069
+        ```
+        
+    - **Открытие менеджера баз данных в Odoo:**
+    В веб-браузере перейдите по адресу:
+        
+        ```
+        http://localhost:8069/database/manager
+        ```
+        
+    
+    sudo apt-get install nodejs npm -y
+
+    ![Описание изображения](/home/dk/Рабочий%20стол/odoo%20framework/img/Снимок%20экрана%20от%202023-12-13%2023-17-11.png)
