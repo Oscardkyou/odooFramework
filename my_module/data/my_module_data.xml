@@ -1,0 +1,10 @@
+<!-- structure_v1/now/data/my_module_data.xml -->
+<odoo>
+    <data>
+        <record id="my_module_demo_product" model="my.module.model">
+            <field name="name">Example Product</field>
+            <field name="description">This is an example product.</field>
+            <!-- Добавьте другие поля по необходимости -->
+        </record>
+    </data>
+</odoo>
