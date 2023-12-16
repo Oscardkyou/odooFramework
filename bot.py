@@ -3,7 +3,7 @@ from aiogram.types import ParseMode
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from aiogram import executor
 
-API_TOKEN = '5659357367:AAF1fhu1-Yj-nLQuQQ5dAh51n1tZSw8_jN8'  # Замените на свой токен
+API_TOKEN = ''  # Замените на свой токен
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
