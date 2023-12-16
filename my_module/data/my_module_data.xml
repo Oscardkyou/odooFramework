@@ -1,10 +1,65 @@
 <!-- structure_v1/now/data/my_module_data.xml -->
 <odoo>
     <data>
-        <record id="my_module_demo_product" model="my.module.model">
-            <field name="name">Example Product</field>
-            <field name="description">This is an example product.</field>
-            <!-- Добавьте другие поля по необходимости -->
+        <!-- Акт изменения свойств товаров #0005 -->
+        <record id="act_change_properties_0005" model="my.module.model">
+            <field name="name">Акт изменения свойств товаров #0005</field>
+            <field name="date">25 октября 2023 года</field>
+            <field name="assigned_status">Продажа</field>
+            <field name="apply_for_goods_from">Основной склад в Санкт-Петербурге</field>
+            <field name="assign_new_warehouse">Основной склад в Санкт-Петербурге</field>
+        </record>
+
+        <!-- Кроссовки Nike Air Max #qwibc-kigga-qwwee -->
+        <record id="sneakers_qwibc-kigga-qwwee" model="my.module.model">
+            <field name="product_name">Кроссовки Nike Air Max #qwibc-kigga-qwwee</field>
+            <field name="last_assigned_warehouse">Основной склад в Санкт-Петербурге</field>
+            <field name="last_assigned_status">Продан</field>
+            <field name="quantity">5</field>
+            <field name="expenses_revenue">
+                <record>
+                    <field name="cost_category">Закупочная стоимость</field>
+                    <field name="amount">-р.6 000</field>
+                </record>
+                <record>
+                    <field name="cost_category">Стоимость логистики</field>
+                    <field name="amount">p.140 000</field>
+                </record>
+            </field>
+        </record>
+
+        <!-- Кроссовки Nike Air Max #qwibc-kjgga-qwwee -->
+        <record id="sneakers_qwibc-kjgga-qwwee" model="my.module.model">
+            <field name="product_name">Кроссовки Nike Air Max #qwibc-kjgga-qwwee</field>
+            <field name="last_assigned_warehouse">Основной склад в Санкт-Петербурге</field>
+            <field name="last_assigned_status">Продан</field>
+            <field name="quantity">7</field>
+            <field name="expenses_revenue">
+                <record>
+                    <field name="cost_category">Закупочная стоимость</field>
+                    <field name="amount">р.3 000</field>
+                </record>
+                <record>
+                    <field name="cost_category">Стоимость логистики</field>
+                    <field name="amount">p.300</field>
+                </record>
+                <record>
+                    <field name="cost_category">Продвижение товара</field>
+                    <field name="amount">p.600</field>
+                </record>
+                <record>
+                    <field name="cost_category">Комиссия агента</field>
+                    <field name="amount">p.300</field>
+                </record>
+                <record>
+                    <field name="cost_category">Продажа</field>
+                    <field name="amount">p.7 000</field>
+                </record>
+                <record>
+                    <field name="cost_category">Прибыль</field>
+                    <field name="amount">p.2 800</field>
+                </record>
+            </field>
         </record>
     </data>
 </odoo>

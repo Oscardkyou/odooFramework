@@ -18,6 +18,7 @@ class MyModuleProduct(models.Model):
 
     name = fields.Char(string='Product Name', required=True)
     quantity = fields.Float(string='Quantity', required=True)
+    act_id = fields.Many2one('my.module.another_model', string='Act')
     expenses_revenues = fields.One2many('my.module.expense.revenue', 'product_id', string='Expenses/Revenues')
 
 class MyModuleExpenseRevenue(models.Model):

@@ -1,15 +1,32 @@
 <!-- structure_v1/now/views/my_model_views.xml -->
 <odoo>
     <data>
-        <record id="my_module_model_form" model="ir.ui.view">
-            <field name="name">my.module.model.form</field>
-            <field name="model">my.module.model</field>
+        <record id="my_module_another_model_form" model="ir.ui.view">
+            <field name="name">my.module.another_model.form</field>
+            <field name="model">my.module.another_model</field>
             <field name="arch" type="xml">
                 <form>
                     <group>
                         <field name="name"/>
-                        <field name="description"/>
-                        <!-- Добавьте другие поля по необходимости -->
+                        <field name="date"/>
+                        <field name="status"/>
+                        <field name="apply_for_products_from"/>
+                        <field name="assign_new_warehouse"/>
+                        <field name="products" widget="one2many_list"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="my_module_product_form" model="ir.ui.view">
+            <field name="name">my.module.product.form</field>
+            <field name="model">my.module.product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="quantity"/>
+                        <field name="expenses_revenues" widget="one2many_list"/>
                     </group>
                 </form>
             </field>

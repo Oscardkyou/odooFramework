@@ -1,7 +1,7 @@
 {
-    'name': 'My Module',
+    'name': 'ProductMarkingSystem',
     'version': '1.0',
-    'author': 'Your Name',
+    'author': 'dk',
     'category': 'Uncategorized',
     'depends': ['base'],
     'data': [
